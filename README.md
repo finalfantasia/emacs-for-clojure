@@ -11,7 +11,7 @@
    `git clone https://github.com/finalfantasia/emacs-for-clojure ~/.emacs.d`
 4. Launch Emacs.
 
-   It should start installing packages. Note that compilation of some packages might cause warnings which, most probably can be ignored.
+   It should start installing packages. Note that compilation of some packages might cause warnings which, usually, can be ignored.
 
 ## Organization
 
