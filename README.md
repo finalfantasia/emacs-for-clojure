@@ -8,7 +8,7 @@
    (Windows users, your Emacs files will probably live in `C:\Users\<USER_NAME>\AppData\Roaming\`. So, for example, you would delete `C:\Users\<USER_NAME>\AppData\Roaming\.emacs.d`.)
 3. git clone the Emacs [configuration](https://github.com/finalfantasia/emacs-for-clojure) into `~/.emacs.d`:
 
-   `git clone https://github.com/finalfantasia/emacs-for-clojure ~.emacs.d`
+   `git clone https://github.com/finalfantasia/emacs-for-clojure ~/.emacs.d`
 4. Launch Emacs.
 
    It should start installing packages. Note that compilation of some packages might cause warnings which, most probably can be ignored.
