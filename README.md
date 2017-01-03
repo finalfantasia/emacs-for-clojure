@@ -1,7 +1,7 @@
 ## Installing
 
 1. Quit Emacs.
-2. Delete `~/.emacs` or `~/.emacs.d` if they exist.
+2. Delete `~/.emacs.d` (and/or `~/.emacs`) if it exists.
 
    This is where Emacs looks for configuration files, and deleting these files and directories will ensure that you start with a clean slate.
 
