@@ -1,5 +1,3 @@
-# This is a Clojure-friendly Emacs configuration based on https://github.com/flyingmachine/emacs-for-clojure/
-
 ## Installing
 
 1. Quit Emacs.
@@ -22,4 +20,3 @@ of every line. [`init.el`](./init.el) acts as a kind of table of
 contents.  It's a good idea to eventually go through `init.el` and the
 files under the `customizations` directory so that you know exactly
 what's going on.
-
