@@ -62,7 +62,7 @@
   (untabify (region-beginning) (region-end))
   (keyboard-quit))
 
-;; fix weird os x kill error
+;; fix weird macOS kill error
 (defun ns-get-pasteboard ()
   "Returns the value of the pasteboard, or nil for unsupported formats."
   (condition-case nil
