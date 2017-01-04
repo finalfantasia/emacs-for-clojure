@@ -121,17 +121,13 @@
 ;; below, Emacs knows where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
-;; Sets up exec-path-from-shell so that Emacs will use the correct
-;; environment variables
-(load "shell-integration.el")
+;; These customizations change the way emacs looks and disable/enable
+;; some user interface elements
+(load "ui.el")
 
 ;; These customizations make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
 (load "navigation.el")
-
-;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements
-(load "ui.el")
 
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
@@ -160,3 +156,6 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Sets up exec-path-from-shell so that Emacs will use the correct
+;; environment variables
+(load "shell-integration.el")
