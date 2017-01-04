@@ -4,18 +4,26 @@
 
 ;; Define package repositories
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("tromey" . "http://tromey.com/elpa/")))
+(setq package-archives
+      '(("gnu"          . "http://elpa.gnu.org/packages/")
+        ("melpa"        . "http://melpa.org/packages/")
+        ("melpa-stable" . "http://stable.melpa.org/packages/")
+        ("marmalade"    . "http://marmalade-repo.org/packages/")
+        ("tromey"       . "http://tromey.com/elpa/")))
 (setq package-pinned-packages
-                '((smex               . "melpa-stable")
-                  (cider              . "melpa-stable")
-                  (clojure-mode       . "melpa-stable")
-                  (rainbow-delimiters . "melpa-stable")))
+      '((cider                           . "melpa-stable")
+        (clojure-mode                    . "melpa-stable")
+        (clojure-mode-extra-font-locking . "melpa-stable")
+        (ido-ubiquitous                  . "melpa-stable")
+        (magit                           . "melpa-stable")
+        (paredit                         . "melpa-stable")
+        (projectile                      . "melpa-stable")
+        (rainbow-delimiters              . "melpa-stable")
+        (smex                            . "melpa-stable")
+        (solarized-theme                 . "melpa-stable")
+        (tagedit                         . "melpa-stable")))
 
-;; Load and activate emacs packages. Do this first so that the
+;; Load and activate Emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
 ;; This also sets the load path.
 (package-initialize)
@@ -26,7 +34,7 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;; Define he following variables to remove the compile-log warnings
+;; Define the following variables to remove the compile-log warnings
 ;; when defining ido-ubiquitous
 (defvar ido-cur-item nil)
 (defvar ido-default-item nil)
@@ -39,9 +47,10 @@
 ;; Add in your own as you wish:
 (defvar my-packages nil)
 (setq my-packages
-  '(;; makes handling lisp expressions much, much easier
-    ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-    paredit
+  '(
+    ;; integration with a Clojure REPL
+    ;; https://github.com/clojure-emacs/cider
+    cider
 
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
@@ -50,19 +59,17 @@
     ;; extra syntax highlighting for clojure
     clojure-mode-extra-font-locking
 
-    ;; integration with a Clojure REPL
-    ;; https://github.com/clojure-emacs/cider
-    cider
-
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
     ido-ubiquitous
 
-    ;; Enhances M-x to allow easier execution of commands. Provides
-    ;; a filterable list of possible commands in the minibuffer
-    ;; http://www.emacswiki.org/emacs/Smex
-    smex
+    ;; git integration
+    magit
+
+    ;; makes handling lisp expressions much, much easier
+    ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
+    paredit
 
     ;; project navigation
     projectile
@@ -70,14 +77,17 @@
     ;; colorful parenthesis matching
     rainbow-delimiters
 
-    ;; edit html tags like sexps
-    tagedit
-
-    ;; git integration
-    magit
+    ;; Enhances M-x to allow easier execution of commands. Provides
+    ;; a filterable list of possible commands in the minibuffer
+    ;; http://www.emacswiki.org/emacs/Smex
+    smex
 
     ;; Solarized theme
-    solarized-theme))
+    solarized-theme
+
+    ;; edit html tags like sexps
+    tagedit
+))
 
 ;; On macOS, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
