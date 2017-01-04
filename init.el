@@ -47,8 +47,7 @@
 ;; Add in your own as you wish:
 (defvar my-packages nil)
 (setq my-packages
-  '(
-    ;; integration with a Clojure REPL
+  '(;; integration with a Clojure REPL
     ;; https://github.com/clojure-emacs/cider
     cider
 
@@ -86,8 +85,7 @@
     solarized-theme
 
     ;; edit html tags like sexps
-    tagedit
-))
+    tagedit))
 
 ;; On macOS, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
