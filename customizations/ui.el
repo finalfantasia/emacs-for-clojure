@@ -7,7 +7,7 @@
 ;; Turn off the menu bar at the top of each frame because it's distracting,
 ;; unless it's on macOS where the single menu bar is always present but with
 ;; -1 will not include the mode-specific menu entries.
-(when (not (eq system-type 'darwin))
+(unless (memq window-system '(mac ns))
   (menu-bar-mode -1))
 
 ;; Show line numbers
