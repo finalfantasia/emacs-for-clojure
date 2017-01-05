@@ -31,7 +31,7 @@
 ;; Download the ELPA archive description if needed.
 ;; This informs Emacs about the latest versions of all packages, and
 ;; makes them available for download.
-(when (not package-archive-contents)
+(unless package-archive-contents
   (package-refresh-contents))
 
 ;; Define the following variables to remove the compile-log warnings
@@ -95,11 +95,11 @@
 ;; This library works around this problem by copying important
 ;; environment variables from the user's shell.
 ;; https://github.com/purcell/exec-path-from-shell
-(if (eq system-type 'darwin)
+(when (eq system-type 'darwin)
     (add-to-list 'my-packages 'exec-path-from-shell))
 
 (dolist (p my-packages)
-  (when (not (package-installed-p p))
+  (unless (package-installed-p p)
     (package-install p)))
 
 
